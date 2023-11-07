@@ -1,0 +1,23 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+ font-size: 14px;
+}
+
+body {
+  background: var(--bg-cream);
+  font-family: var(--ff-base), fantasy;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: grid;;
+  place-items: center;
+  padding: 1rem;
+  border-radius: 10px;
+  font-weight: var(--ff-base);
+}
+
+
