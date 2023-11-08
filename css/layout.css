@@ -33,6 +33,11 @@
 .card__figure .card__img {
   width: 100%;
   height: 100%;
+<<<<<<< HEAD
+=======
+  object-fit: cover ;
+  object-position: 50% 50% ;
+>>>>>>> ca05678ebd483a1de01bd2d7fa61561af06015c6
 }
 
 .card__body {
