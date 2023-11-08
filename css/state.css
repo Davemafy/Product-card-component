@@ -7,8 +7,9 @@
 
   background: var(--bg-dark-cyan);
   background: #37A52A38;
+  background: #94FF8926;
 
- overflow: hidden;
+  overflow: hidden;
 }
 
 .card__figure * {
@@ -17,15 +18,14 @@
 
 .card__figure .card__img {
   opacity: 1;
-  -webkit-mask-image: linear-gradient(red, blue);
+  -webkit-mask-image: linear-gradient(red , blue);
   transition: 500ms 100ms ease;
 }
 
-.card:has(.card__btn:hover) .card__ig {
+.card:has(.card__btn:hover) .card__img {
   opacity: 0;
-  transition: 500ms cubic-bezier(0.23, 1, 0.320, 1), scale 200ms;
+  transition: 300ms cubic-bezier(0.23, 1, 0.320, 1) 300ms, scale 200ms;
 
-  -webkit-mask-image: linear-gradient(#000, #0000);
 }
 
 
@@ -43,37 +43,82 @@
 
   scale: 1;
   rotate: 360deg;
-  translate: 100% 0;
+  translate: -100% -100%;
+  border-end-end-radius: 200%;
+  border-end-start-radius: 200%;
+  border-start-end-radius: 200%;
+  --delay: 0ms;
   transition:
     all 500ms ease,
-    height 500ms 1150ms,
+    translate 500ms cubic-bezier(0.455, 0.03, 0.515, 0.955),
+    border-radius 500ms var(--delay),
+    background 300ms var(--delay),
+    color 0ms var(--delay),
+    height 500ms,
+    rotate 500ms var(--delay),
+    transform 500ms 1000ms;
+  /*
     background 500ms 1150ms,
     transform 500ms 2000ms,
+    translate 500ms 2500ms,
     filter 500ms 2000ms,
     rotate 1000ms;
+    */
 }
 
 .card__figure-caption * {
   grid-area: "stack";
+  opacity: 0.6;
 }
+
+.card:has(.card__btn:hover) .card__figure-caption * {
+  opacity: 1;
+}
+
 
 .card__figure-caption div {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   transition: inherit;
-  text-transform: uppercase ;
-  font-weight: 600;
-  gap: 0rem;
+  text-transform: capitalize;
+  font-weight: 100;
+  gap: 0.3rem;
 }
-.card__figure-caption div img{
-  transition: 700ms;
+
+.card__figure-caption div img,
+.card__figure-caption div svg {
+  --trns-base: 300ms ease;
+  scale: 1;
+  rotate: 0deg;
+  animaton: scaler 500ms 3  infinite paused;
+  transition:
+    all var(--trns-base);
 }
 
 .card:has(.card__btn:hover) .card__figure-caption {
+  --delay: 150ms;
   scale: 1;
-  translate: 0 0;
+  rotate: 0;
+  color: var(--cl-cream);
+  background:  #D3EBD1;
+  opacity: .9;
+  border-radius: 0;
+  translate: 0% 0;
 }
 
-.card:has(.card__btn:hover) .card__figure-caption img {
-  margin-left: 4rem;
+.card:has(.card__btn:hover) .card__figure-caption div svg {
+  rotate: 0;
+  animation-play-state: running ;
+}
+
+@keyframes scaler {
+  0%, 100%{
+    scale: 1;
+  }
+  50%{
+    scale: 1.2;
+    color: red;
+    fill: blue;
+  filter: drop-shadow(-5px -5px 0rem green );
+  }
 }

@@ -4,7 +4,7 @@
   min-width: min-content;
   display: grid;
   margin: auto;
-  overflow-x: hidden;
+  overflow: hidden;
 
   /*  height: min(100% - 5rem, 600px);*/
   /*  max-width: 320px;*/
@@ -26,17 +26,19 @@
   display: none;
 }
 
+.card__figure picture {
+  width: 100%;
+  height: 100%;
+}
 .card__figure .card__img {
   width: 100%;
   height: 100%;
-/*  object-fit: cover ;
-  object-position: 50% 50% ;*/
 }
 
 .card__body {
   display: grid;
   gap: 1rem;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.5rem 2rem ;
 }
 
 .card__prices,

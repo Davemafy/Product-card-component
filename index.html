@@ -12,11 +12,11 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/module.css">
+  <link rel="stylesheet" href="css/state.css">
 
   <title>Frontend Mentor | Product preview card component</title>
 
   <style>
-  
     .attribution {
       font-size: 11px;
       text-align: center;
@@ -31,30 +31,33 @@
 
 <body>
   <section class="card">
-    <figure class="card__figure">
-      <img 
-        srcset="
-          " 
-        src="
-          images/image-product-mobile.jpg" 
-          class="card__img"
-          alt="">
-      <figcaption class="card__figure-caption">
+    <div class="card__figure">
+      <picture>
+        <source media="(min-width: 600px)" srcset="images/image-product-desktop.jpg">
+        <img src="images/image-product-mobile.jpg" class="card__img" alt="">
+      </picture>
+      <section class="card__figure-caption">
         <div>
           Added to cart
-          <img
-            src="/images/click.svg" 
-            alt="">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-click" width="24" height="24" viewBox="0 0 24 24" stroke-width="2.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 12l3 0" />
+            <path d="M12 3l0 3" />
+            <path d="M7.8 7.8l-2.2 -2.2" />
+            <path d="M16.2 7.8l2.2 -2.2" />
+            <path d="M7.8 16.2l-2.2 2.2" />
+            <path d="M12 12l9 3l-4 2l-2 4l-3 -9" />
+          </svg>
         </div>
-      </figcaption>
-    </figure>
+      </section>
+    </div>
     <section class="card__body">
       <p class="card__type">Perfume</p>
       <h1 class="card__title">
         Gabrielle Essence Eau De Parfum
       </h1>
       <p class="card__description">
-        A floral, solar and voluptuous 
+        A floral, solar and voluptuous
         interpretation composed by Olivier Polge,
         Perfumer-Creator for the House of CHANEL.
       </p>
